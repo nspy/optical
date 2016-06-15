@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/flowvisor-0.8.2/src/org/flowvisor/FlowVisor.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="false"/>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.flowvisor.FlowVisor"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-l -d MOBUG /usr/local/etc/flowvisor/config.xml"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="flowvisor-0.8.2"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dorg.flowvisor.install_dir=/usr/local/libexec/flowvisor/&#10;-Dorg.flowvisor.config_dir=/usr/local/etc/flowvisor/&#10;-Djavax.net.ssl.keyStore=/usr/local/etc/flowvisor/mySSLKeyStore&#10;-Djavax.net.ssl.keyStorePassword=CHANGEME_PASSWD"/>
+</launchConfiguration>

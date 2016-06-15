@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/flowvisor-0.8.2/src/org/flowvisor/api/FVCtl.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.flowvisor.api.FVCtl"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="--passwd-file=/home/nikos/fvadmin.pass getCLinks"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="flowvisor-0.8.2"/>
+</launchConfiguration>

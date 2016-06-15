@@ -1,0 +1,427 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xb6cf569a, pid=4904, tid=2402745152
+#
+# JRE version: 6.0_45-b06
+# Java VM: Java HotSpot(TM) Server VM (20.45-b01 mixed mode linux-x86 )
+# Problematic frame:
+# V  [libjvm.so+0x3e369a]  java_lang_String::utf8_length(oopDesc*)+0x3a
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0xb679f000):  JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_in_vm, id=4919, stack(0x8f31f000,0x8f370000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x00000004
+
+Registers:
+EAX=0xb711f9e8, EBX=0xb7116cc8, ECX=0x00000010, EDX=0xa8cd4758
+ESP=0x8f36ecb0, EBP=0x8f36ecc8, ESI=0x00000000, EDI=0x00000000
+EIP=0xb6cf569a, EFLAGS=0x00010282, CR2=0x00000004
+
+Top of Stack: (sp=0x8f36ecb0)
+0x8f36ecb0:   b679f000 00000000 b6cf566b b7116cc8
+0x8f36ecc0:   b679f000 a8cd4758 8f36ed38 b6d1e1e8
+0x8f36ecd0:   a8cd4758 00000000 00000008 b6d1e129
+0x8f36ece0:   b679f000 0921d778 b679f120 8f36ecf0
+0x8f36ecf0:   b679f000 00000000 8f36ed38 b66f30c9
+0x8f36ed00:   b679f000 00000001 b6751374 b66ff438
+0x8f36ed10:   b679f000 8f36ef00 8f36ed38 b66e223c
+0x8f36ed20:   8eb4b6b0 8f36ef00 00000000 b66ff438 
+
+Instructions: (pc=0xb6cf569a)
+0xb6cf567a:   00 8b 55 08 8b 30 8b 83 b4 12 00 00 8d 3c 16 8b
+0xb6cf568a:   37 8b 38 8d 04 17 8b 38 8b 83 d4 21 00 00 8b 08
+0xb6cf569a:   8b 46 04 01 ca 83 c0 08 8b 0a 80 78 05 05 74 0a
+0xb6cf56aa:   89 c8 8d 65 f4 5b 5e 5f 5d c3 85 c9 8d 54 7e 0c 
+
+Register to memory mapping:
+
+EAX=0xb711f9e8: <offset 0x80d9e8> in /usr/lib/jvm/java-6-oracle/jre/lib/i386/server/libjvm.so at 0xb6912000
+EBX=0xb7116cc8: <offset 0x804cc8> in /usr/lib/jvm/java-6-oracle/jre/lib/i386/server/libjvm.so at 0xb6912000
+ECX=0x00000010 is an unknown value
+EDX=0xa8cd4758 is an oop
+java.lang.String 
+ - klass: 'java/lang/String'
+ESP=0x8f36ecb0 is pointing into the stack for thread: 0xb679f000
+EBP=0x8f36ecc8 is pointing into the stack for thread: 0xb679f000
+ESI=0x00000000 is an unknown value
+EDI=0x00000000 is an unknown value
+
+
+Stack: [0x8f31f000,0x8f370000],  sp=0x8f36ecb0,  free space=319k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x3e369a]  java_lang_String::utf8_length(oopDesc*)+0x3a
+V  [libjvm.so+0x40c1e8]  unsigned+0xd8
+C  [libjdwp.so+0x9de1]  void+0x91
+C  [libjdwp.so+0x13143]  double+0x233
+C  [libjdwp.so+0x27fd5]  char+0x75
+C  [libjdwp.so+0x282d3]  signed char+0x33
+V  [libjvm.so+0x4fa629]  JvmtiAgentThread::start_function_wrapper(JavaThread*, Thread*)+0x79
+V  [libjvm.so+0x6e495f]  JavaThread::run()+0x11f
+V  [libjvm.so+0x5e4dae]  java_start(Thread*)+0x14e
+C  [libpthread.so.0+0x6d4c]  short+0xcc
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x8ee4e800 JavaThread "XML-RPC-0" [_thread_blocked, id=4967, stack(0x8f058000,0x8f0a9000)]
+  0x8eb2a800 JavaThread "XML-RPC Weblistener" [_thread_in_native, id=4937, stack(0x8f005000,0x8f056000)]
+  0xb67b0400 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=4929, stack(0x8f12a000,0x8f17b000)]
+  0xb67a5000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=4928, stack(0x8f17b000,0x8f1fc000)]
+  0xb67a3000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=4927, stack(0x8f1fc000,0x8f27d000)]
+  0x09168c00 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=4921, stack(0x8f27d000,0x8f2ce000)]
+  0xb67a1800 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=4920, stack(0x8f2ce000,0x8f31f000)]
+=>0xb679f000 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_in_vm, id=4919, stack(0x8f31f000,0x8f370000)]
+  0xb6796800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4916, stack(0x8f374000,0x8f3c5000)]
+  0xb6788800 JavaThread "Finalizer" daemon [_thread_blocked, id=4914, stack(0x8f3c5000,0x8f416000)]
+  0xb6787400 JavaThread "Reference Handler" daemon [_thread_blocked, id=4913, stack(0x8f416000,0x8f467000)]
+  0xb6707800 JavaThread "main" [_thread_in_native, id=4905, stack(0xb6895000,0xb68e6000)]
+
+Other Threads:
+  0xb6783800 VMThread [stack: 0x8f74b000,0x8f7cc000] [id=4909]
+  0xb67b2000 WatcherThread [stack: 0x8f0a9000,0x8f12a000] [id=4930]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 32320K, used 1038K [0xa8c00000, 0xac4a0000, 0xb3400000)
+  eden space 30976K, 3% used [0xa8c00000,0xa8d038d8,0xaaa40000)
+  from space 1344K, 0% used [0xaab80000,0xaab80000,0xaacd0000)
+  to   space 13504K, 0% used [0xab770000,0xab770000,0xac4a0000)
+ PSOldGen        total 32704K, used 12814K [0x93c00000, 0x95bf0000, 0xa8c00000)
+  object space 32704K, 39% used [0x93c00000,0x94883860,0x95bf0000)
+ PSPermGen       total 17408K, used 8643K [0x8fc00000, 0x90d00000, 0x93c00000)
+  object space 17408K, 49% used [0x8fc00000,0x90470d48,0x90d00000)
+
+Code Cache  [0xb34c5000, 0xb3705000, 0xb64c5000)
+ total_blobs=321 nmethods=202 adapters=81 free_code_cache=49441152 largest_free_block=17024
+
+Dynamic libraries:
+08048000-08052000 r-xp 00000000 08:01 919277     /usr/lib/jvm/java-6-oracle/bin/java
+08052000-08053000 rwxp 00009000 08:01 919277     /usr/lib/jvm/java-6-oracle/bin/java
+09167000-098d8000 rwxp 00000000 00:00 0          [heap]
+8e900000-8e9fb000 rwxp 00000000 00:00 0 
+8e9fb000-8ea00000 ---p 00000000 00:00 0 
+8ea00000-8eaf9000 rwxp 00000000 00:00 0 
+8eaf9000-8eb00000 ---p 00000000 00:00 0 
+8eb00000-8ebfd000 rwxp 00000000 00:00 0 
+8ebfd000-8ec00000 ---p 00000000 00:00 0 
+8ed00000-8edfb000 rwxp 00000000 00:00 0 
+8edfb000-8ee00000 ---p 00000000 00:00 0 
+8ee00000-8eefc000 rwxp 00000000 00:00 0 
+8eefc000-8ef00000 ---p 00000000 00:00 0 
+8ef00000-8effe000 rwxp 00000000 00:00 0 
+8effe000-8f000000 ---p 00000000 00:00 0 
+8f005000-8f008000 ---p 00000000 00:00 0 
+8f008000-8f056000 rwxp 00000000 00:00 0 
+8f058000-8f05b000 ---p 00000000 00:00 0 
+8f05b000-8f0a9000 rwxp 00000000 00:00 0 
+8f0a9000-8f0aa000 ---p 00000000 00:00 0 
+8f0aa000-8f12a000 rwxp 00000000 00:00 0 
+8f12a000-8f12d000 ---p 00000000 00:00 0 
+8f12d000-8f17b000 rwxp 00000000 00:00 0 
+8f17b000-8f17e000 ---p 00000000 00:00 0 
+8f17e000-8f1fc000 rwxp 00000000 00:00 0 
+8f1fc000-8f1ff000 ---p 00000000 00:00 0 
+8f1ff000-8f27d000 rwxp 00000000 00:00 0 
+8f27d000-8f280000 ---p 00000000 00:00 0 
+8f280000-8f2ce000 rwxp 00000000 00:00 0 
+8f2ce000-8f2d1000 ---p 00000000 00:00 0 
+8f2d1000-8f31f000 rwxp 00000000 00:00 0 
+8f31f000-8f322000 ---p 00000000 00:00 0 
+8f322000-8f370000 rwxp 00000000 00:00 0 
+8f370000-8f373000 r-xp 00000000 08:01 931342     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libdt_socket.so
+8f373000-8f374000 rwxp 00003000 08:01 931342     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libdt_socket.so
+8f374000-8f377000 ---p 00000000 00:00 0 
+8f377000-8f3c5000 rwxp 00000000 00:00 0 
+8f3c5000-8f3c8000 ---p 00000000 00:00 0 
+8f3c8000-8f416000 rwxp 00000000 00:00 0 
+8f416000-8f419000 ---p 00000000 00:00 0 
+8f419000-8f467000 rwxp 00000000 00:00 0 
+8f467000-8f600000 r-xs 03087000 08:01 931169     /usr/lib/jvm/java-6-oracle/jre/lib/rt.jar
+8f600000-8f621000 rwxp 00000000 00:00 0 
+8f621000-8f700000 ---p 00000000 00:00 0 
+8f708000-8f70b000 r-xs 00013000 08:01 932242     /usr/lib/jvm/java-6-oracle/jre/lib/jce.jar
+8f70b000-8f70e000 r-xs 00027000 08:01 930842     /usr/lib/jvm/java-6-oracle/jre/lib/ext/sunjce_provider.jar
+8f70e000-8f715000 r-xs 00096000 08:01 930952     /usr/lib/jvm/java-6-oracle/jre/lib/jsse.jar
+8f715000-8f71c000 r-xp 00000000 08:01 931248     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libnio.so
+8f71c000-8f71d000 rwxp 00006000 08:01 931248     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libnio.so
+8f71d000-8f731000 r-xp 00000000 08:01 931351     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libnet.so
+8f731000-8f732000 rwxp 00013000 08:01 931351     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libnet.so
+8f732000-8f738000 r-xs 00031000 08:01 918923     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/openflow.jar
+8f738000-8f73a000 r-xs 0001b000 08:01 939284     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/servlet-api-2.5.jar
+8f73a000-8f73d000 r-xs 0002a000 08:01 940055     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/jetty-util-7.0.2.v20100331.jar
+8f73d000-8f742000 r-xs 00039000 08:01 940085     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/jetty-server-7.0.2.v20100331.jar
+8f742000-8f745000 r-xs 0000e000 08:01 939075     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/jetty-security-7.0.2.v20100331.jar
+8f745000-8f74b000 r-xs 00034000 08:01 940079     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/junit-4.8.1.jar
+8f74b000-8f74c000 ---p 00000000 00:00 0 
+8f74c000-8f800000 rwxp 00000000 00:00 0 
+8f800000-8f821000 rwxp 00000000 00:00 0 
+8f821000-8f900000 ---p 00000000 00:00 0 
+8f900000-8f902000 r-xs 0000f000 08:01 939085     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/jetty-io-7.0.2.v20100331.jar
+8f902000-8f905000 r-xs 00018000 08:01 939220     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/jetty-http-7.0.2.v20100331.jar
+8f905000-8f90c000 r-xs 00091000 08:01 940116     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/jsse.jar
+8f90c000-8f90e000 r-xs 0000d000 08:01 938983     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/commons-codec-1.4.jar
+8f90e000-8f915000 r-xs 0003e000 08:01 940093     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/cglib-2.2.jar
+8f915000-8f917000 r-xs 00009000 08:01 938940     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/asm-3.0.jar
+8f917000-8f919000 r-xs 00012000 08:01 939141     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/xmlrpc-server-3.1.3.jar
+8f919000-8f91a000 ---p 00000000 00:00 0 
+8f91a000-8f99a000 rwxp 00000000 00:00 0 
+8f99a000-8f99b000 ---p 00000000 00:00 0 
+8f99b000-8fa24000 rwxp 00000000 00:00 0 
+8fa24000-8fa3b000 rwxp 00000000 00:00 0 
+8fa3b000-8fa4b000 rwxp 00000000 00:00 0 
+8fa4b000-8fae3000 rwxp 00000000 00:00 0 
+8fae3000-8faec000 rwxp 00000000 00:00 0 
+8faec000-8fb03000 rwxp 00000000 00:00 0 
+8fb03000-8fb13000 rwxp 00000000 00:00 0 
+8fb13000-8fbab000 rwxp 00000000 00:00 0 
+8fbab000-8fbc8000 rwxp 00000000 00:00 0 
+8fbc8000-8fbff000 rwxp 00000000 00:00 0 
+8fbff000-90d00000 rwxp 00000000 00:00 0 
+90d00000-93c00000 rwxp 00000000 00:00 0 
+93c00000-95bf0000 rwxp 00000000 00:00 0 
+95bf0000-a8c00000 rwxp 00000000 00:00 0 
+a8c00000-ac4a0000 rwxp 00000000 00:00 0 
+ac4a0000-b3400000 rwxp 00000000 00:00 0 
+b3401000-b3405000 r-xs 00017000 08:01 939240     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/xmlrpc-common-3.1.3.jar
+b3405000-b340e000 rwxp 00000000 00:00 0 
+b340e000-b34c5000 rwxp 00000000 00:00 0 
+b34c5000-b3705000 rwxp 00000000 00:00 0 
+b3705000-b64c5000 rwxp 00000000 00:00 0 
+b64c5000-b66c5000 r-xp 00000000 08:01 785021     /usr/lib/locale/locale-archive
+b66c5000-b66ff000 r-xp 00000000 08:01 931300     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libjdwp.so
+b66ff000-b6700000 rwxp 00039000 08:01 931300     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libjdwp.so
+b6700000-b67fa000 rwxp 00000000 00:00 0 
+b67fa000-b6800000 ---p 00000000 00:00 0 
+b6800000-b6801000 r-xp 00000000 08:01 1193062    /usr/share/locale-langpack/en_GB/LC_MESSAGES/libc.mo
+b6801000-b6804000 r-xs 0000c000 08:01 938991     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/xmlrpc-client-3.1.3.jar
+b6804000-b6813000 r-xp 00000000 08:01 931314     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libzip.so
+b6813000-b6815000 rwxp 0000e000 08:01 931314     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libzip.so
+b6815000-b6820000 r-xp 00000000 08:01 423068     /lib/i386-linux-gnu/libnss_files-2.15.so
+b6820000-b6821000 r-xp 0000a000 08:01 423068     /lib/i386-linux-gnu/libnss_files-2.15.so
+b6821000-b6822000 rwxp 0000b000 08:01 423068     /lib/i386-linux-gnu/libnss_files-2.15.so
+b6822000-b682c000 r-xp 00000000 08:01 423072     /lib/i386-linux-gnu/libnss_nis-2.15.so
+b682c000-b682d000 r-xp 00009000 08:01 423072     /lib/i386-linux-gnu/libnss_nis-2.15.so
+b682d000-b682e000 rwxp 0000a000 08:01 423072     /lib/i386-linux-gnu/libnss_nis-2.15.so
+b682e000-b6835000 r-xp 00000000 08:01 423066     /lib/i386-linux-gnu/libnss_compat-2.15.so
+b6835000-b6836000 r-xp 00006000 08:01 423066     /lib/i386-linux-gnu/libnss_compat-2.15.so
+b6836000-b6837000 rwxp 00007000 08:01 423066     /lib/i386-linux-gnu/libnss_compat-2.15.so
+b6837000-b684d000 r-xp 00000000 08:01 423084     /lib/i386-linux-gnu/libnsl-2.15.so
+b684d000-b684e000 r-xp 00015000 08:01 423084     /lib/i386-linux-gnu/libnsl-2.15.so
+b684e000-b684f000 rwxp 00016000 08:01 423084     /lib/i386-linux-gnu/libnsl-2.15.so
+b684f000-b6851000 rwxp 00000000 00:00 0 
+b6851000-b6852000 r-xs 00004000 08:01 938267     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/jetty-continuation-7.0.2.v20100331.jar
+b6852000-b6853000 r-xs 0000c000 08:01 938969     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/commons-logging-1.1.jar
+b6853000-b6857000 r-xs 00027000 08:01 940046     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/gson-1.7.1.jar
+b6857000-b6858000 r-xs 00006000 08:01 669704     /home/nikos/bin/Eclipse/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar
+b6858000-b685e000 r-xs 00034000 08:01 671505     /home/nikos/bin/Eclipse/plugins/org.junit_4.10.0.v4_10_0_v20120426-0900/junit.jar
+b685e000-b6866000 rwxs 00000000 08:01 393606     /tmp/hsperfdata_nikos/4904
+b6866000-b688a000 r-xp 00000000 08:01 931245     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libjava.so
+b688a000-b688c000 rwxp 00023000 08:01 931245     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libjava.so
+b688c000-b6893000 r-xp 00000000 08:01 423071     /lib/i386-linux-gnu/librt-2.15.so
+b6893000-b6894000 r-xp 00006000 08:01 423071     /lib/i386-linux-gnu/librt-2.15.so
+b6894000-b6895000 rwxp 00007000 08:01 423071     /lib/i386-linux-gnu/librt-2.15.so
+b6895000-b6898000 ---p 00000000 00:00 0 
+b6898000-b68e6000 rwxp 00000000 00:00 0 
+b68e6000-b6910000 r-xp 00000000 08:01 423075     /lib/i386-linux-gnu/libm-2.15.so
+b6910000-b6911000 r-xp 00029000 08:01 423075     /lib/i386-linux-gnu/libm-2.15.so
+b6911000-b6912000 rwxp 0002a000 08:01 423075     /lib/i386-linux-gnu/libm-2.15.so
+b6912000-b70c7000 r-xp 00000000 08:01 931240     /usr/lib/jvm/java-6-oracle/jre/lib/i386/server/libjvm.so
+b70c7000-b711b000 rwxp 007b5000 08:01 931240     /usr/lib/jvm/java-6-oracle/jre/lib/i386/server/libjvm.so
+b711b000-b753a000 rwxp 00000000 00:00 0 
+b753a000-b76dd000 r-xp 00000000 08:01 423060     /lib/i386-linux-gnu/libc-2.15.so
+b76dd000-b76de000 ---p 001a3000 08:01 423060     /lib/i386-linux-gnu/libc-2.15.so
+b76de000-b76e0000 r-xp 001a3000 08:01 423060     /lib/i386-linux-gnu/libc-2.15.so
+b76e0000-b76e1000 rwxp 001a5000 08:01 423060     /lib/i386-linux-gnu/libc-2.15.so
+b76e1000-b76e4000 rwxp 00000000 00:00 0 
+b76e4000-b76e7000 r-xp 00000000 08:01 423079     /lib/i386-linux-gnu/libdl-2.15.so
+b76e7000-b76e8000 r-xp 00002000 08:01 423079     /lib/i386-linux-gnu/libdl-2.15.so
+b76e8000-b76e9000 rwxp 00003000 08:01 423079     /lib/i386-linux-gnu/libdl-2.15.so
+b76e9000-b76f0000 r-xp 00000000 08:01 931334     /usr/lib/jvm/java-6-oracle/jre/lib/i386/jli/libjli.so
+b76f0000-b76f2000 rwxp 00006000 08:01 931334     /usr/lib/jvm/java-6-oracle/jre/lib/i386/jli/libjli.so
+b76f2000-b76f3000 rwxp 00000000 00:00 0 
+b76f3000-b770a000 r-xp 00000000 08:01 423073     /lib/i386-linux-gnu/libpthread-2.15.so
+b770a000-b770b000 r-xp 00016000 08:01 423073     /lib/i386-linux-gnu/libpthread-2.15.so
+b770b000-b770c000 rwxp 00017000 08:01 423073     /lib/i386-linux-gnu/libpthread-2.15.so
+b770c000-b770e000 rwxp 00000000 00:00 0 
+b770e000-b7710000 r-xs 00007000 08:01 938880     /home/nikos/Dropbox/OFELIA/workspace/flowvisor-0.8.2/lib/ws-commons-util-1.0.2.jar
+b7710000-b7711000 r-xp 002bd000 08:01 785021     /usr/lib/locale/locale-archive
+b7711000-b7714000 r-xp 00000000 08:01 931338     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libnpt.so
+b7714000-b7715000 rwxp 00002000 08:01 931338     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libnpt.so
+b7715000-b7716000 rwxp 00000000 00:00 0 
+b7716000-b7717000 r-xp 00000000 00:00 0 
+b7717000-b7722000 r-xp 00000000 08:01 931246     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libverify.so
+b7722000-b7723000 rwxp 0000b000 08:01 931246     /usr/lib/jvm/java-6-oracle/jre/lib/i386/libverify.so
+b7723000-b7725000 rwxp 00000000 00:00 0 
+b7725000-b7726000 r-xp 00000000 00:00 0          [vdso]
+b7726000-b7746000 r-xp 00000000 08:01 423076     /lib/i386-linux-gnu/ld-2.15.so
+b7746000-b7747000 r-xp 0001f000 08:01 423076     /lib/i386-linux-gnu/ld-2.15.so
+b7747000-b7748000 rwxp 00020000 08:01 423076     /lib/i386-linux-gnu/ld-2.15.so
+bfd10000-bfd32000 rwxp 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:53941 -Dorg.flowvisor.install_dir=/usr/local/libexec/flowvisor/ -Dorg.flowvisor.config_dir=/usr/local/etc/flowvisor/ -Djavax.net.ssl.keyStore=/usr/local/etc/flowvisor/mySSLKeyStore -Djavax.net.ssl.keyStorePassword=CHANGEME_PASSWD -Dfile.encoding=UTF-8 
+java_command: org.flowvisor.FlowVisor -l -d MOBUG /usr/local/etc/flowvisor/config.xml
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-6-oracle
+PATH=/home/nikos/bin/maven/bin:/home/nikos/bin:/home/nikos/apache-maven-2.2.1/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/lib/jvm/java-6-oracle/bin:/usr/lib/jvm/java-6-oracle/db/bin:/usr/lib/jvm/java-6-oracle/jre/bin
+LD_LIBRARY_PATH=/usr/lib/jvm/java-6-oracle/jre/lib/i386/server:/usr/lib/jvm/java-6-oracle/jre/lib/i386:/usr/lib/jvm/java-6-oracle/jre/../lib/i386:/usr/lib/jvm/java-6-oracle/jre/lib/i386/client:/usr/lib/jvm/java-6-oracle/jre/lib/i386:
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x7285f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x7285f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x5e21c0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x5e21c0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x5e21c0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x5e21c0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x5e5420], sa_mask[0]=0x00000004, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x5e5000], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x5e5000], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x5e5000], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x5e5000], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:wheezy/sid
+
+uname:Linux 3.2.0-45-generic #70-Ubuntu SMP Wed May 29 20:11:31 UTC 2013 i686
+libc:glibc 2.15 NPTL 2.15 
+rlimit: STACK 8192k, CORE 0k, NPROC 15990, NOFILE 4096, AS infinity
+load average:0.33 0.37 0.35
+
+/proc/meminfo:
+MemTotal:        2061400 kB
+MemFree:          135804 kB
+Buffers:           33028 kB
+Cached:          1198180 kB
+SwapCached:            4 kB
+Active:          1055828 kB
+Inactive:         795704 kB
+Active(anon):     417100 kB
+Inactive(anon):   206988 kB
+Active(file):     638728 kB
+Inactive(file):   588716 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+HighTotal:       1187720 kB
+HighFree:          27328 kB
+LowTotal:         873680 kB
+LowFree:          108476 kB
+SwapTotal:        600060 kB
+SwapFree:         599908 kB
+Dirty:               412 kB
+Writeback:             0 kB
+AnonPages:        620376 kB
+Mapped:            95536 kB
+Shmem:              3708 kB
+Slab:              37092 kB
+SReclaimable:      24508 kB
+SUnreclaim:        12584 kB
+KernelStack:        2720 kB
+PageTables:         4752 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     1630760 kB
+Committed_AS:    1567784 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       21744 kB
+VmallocChunk:      99796 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       4096 kB
+DirectMap4k:       20472 kB
+DirectMap4M:      888832 kB
+
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 30 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 30
+model name	: Intel(R) Core(TM) i7 CPU         870  @ 2.93GHz
+stepping	: 5
+microcode	: 0x4
+cpu MHz		: 2926.030
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic mtrr pge mca cmov pat pse36 clflush dts mmx fxsr sse sse2 ss ht nx rdtscp lm constant_tsc arch_perfmon pebs bts xtopology tsc_reliable nonstop_tsc aperfmperf pni ssse3 cx16 sse4_1 sse4_2 popcnt hypervisor lahf_lm ida dtherm
+bogomips	: 5852.06
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 30
+model name	: Intel(R) Core(TM) i7 CPU         870  @ 2.93GHz
+stepping	: 5
+microcode	: 0x4
+cpu MHz		: 2926.030
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic mtrr pge mca cmov pat pse36 clflush dts mmx fxsr sse sse2 ss ht nx rdtscp lm constant_tsc arch_perfmon pebs bts xtopology tsc_reliable nonstop_tsc aperfmperf pni ssse3 cx16 sse4_1 sse4_2 popcnt hypervisor lahf_lm ida dtherm
+bogomips	: 5852.06
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 2061400k(135804k free), swap 600060k(599908k free)
+
+vm_info: Java HotSpot(TM) Server VM (20.45-b01) for linux-x86 JRE (1.6.0_45-b06), built on Mar 26 2013 13:50:03 by "java_re" with gcc 3.2.1-7a (J2SE release)
+
+time: Fri Sep 13 18:54:23 2013
+elapsed time: 2619 seconds
+
