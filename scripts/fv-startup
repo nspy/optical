@@ -34,7 +34,7 @@
 # Description:       FlowVisor is a special purpose OpenFlow controller that acts as a transparent proxy between OpenFlow switches and multiple OpenFlow controllers.
 ### END INIT INFO
 
-FV_USER=git_admin
+FV_USER=flowvisor
 FV_CONFIG=/usr/local/etc/flowvisor/config.xml
 
 ## abend 

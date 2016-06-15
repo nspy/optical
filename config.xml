@@ -1,0 +1,40 @@
+{
+  "switches": [],
+  "flowvisor": [
+    {
+      "api_webserver_port": 8080,
+      "db_version": 2,
+      "host": "localhost",
+      "log_ident": "flowvisor",
+      "checkpointing": false,
+      "listen_port": 6633,
+      "logging": "NOTE",
+      "run_topology_server": false,
+      "log_facility": "LOG_LOCAL7",
+      "version": "flowvisor-1.4.0",
+      "config_name": "default",
+      "api_jetty_webserver_port": 8081,
+      "default_flood_perm": "fvadmin",
+      "track_flows": false,
+      "stats_desc_hack": false
+    }
+  ],
+  "FlowSpaceRule": [],
+  "Slice": [
+    {
+      "contact_email": "fvadmin@localhost",
+      "admin_status": true,
+      "creator": "fvadmin",
+      "passwd_salt": "-456992617",
+      "drop_policy": "exact",
+      "config_name": "default",
+      "max_flow_rules": -1,
+      "name": "fvadmin",
+      "controller_port": 0,
+      "controller_hostname": "none",
+      "flowmap_type": "federated",
+      "passwd_crypt": "63dd9c50f922facaee5055a97ca81d99",
+      "lldp_spam": true
+    }
+  ]
+}

@@ -228,7 +228,7 @@ public class FVCFlowMod extends org.openflow.protocol.OFCFlowMod implements
 	    
 		for(int i=0;i<connect.getIn_wport().size() && res;i++)
 		{
-			int cflowMod_port=connect.getIn_wport().get(i).getPort_num();
+			int cflowMod_port=connect.getIn_wport().get(i).getwPort();
 			//long cflowMod_wave=connect.getIn_wport().get(i).getWavelength();
 			
 			List<Float> waves=parse_bandwidth(connect.getIn_wport().get(i).getWavelength());
@@ -249,7 +249,7 @@ public class FVCFlowMod extends org.openflow.protocol.OFCFlowMod implements
 		
 		for(int i=0;i<connect.getOut_wport().size() && res;i++)
 		{
-			int cflowMod_port=connect.getOut_wport().get(i).getPort_num();
+			int cflowMod_port=connect.getOut_wport().get(i).getwPort();
 			//long cflowMod_wave=connect.getIn_wport().get(i).getWavelength();
 			
 			List<Float> waves=parse_bandwidth(connect.getOut_wport().get(i).getWavelength());
@@ -279,7 +279,7 @@ public class FVCFlowMod extends org.openflow.protocol.OFCFlowMod implements
 			if(flowEntry_dpid.equals(dpid))
 			{
 				int flowEntry_port= flowEntry.getRuleMatch().getInputPort();
-				float flowEntry_wavelength= flowEntry.getRuleMatch().getWavelength();				
+				short flowEntry_wavelength= flowEntry.getRuleMatch().getDataLayerVirtualLan();				
 				if ((flowEntry_port==port)&&(flowEntry_wavelength==wavelength))
 				{
 					res=true;

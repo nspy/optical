@@ -89,7 +89,7 @@ public class FVVendor extends OFVendor implements Classifiable, Slicable {
 			if(flowEntry_dpid.equals(dpid))
 			{
 				int flowEntry_port= flowEntry.getRuleMatch().getInputPort();
-				float flowEntry_wavelength= flowEntry.getRuleMatch().getWavelength();				
+				float flowEntry_wavelength= flowEntry.getRuleMatch().getDataLayerVirtualLan();				
 				if ((flowEntry_port==port)&&(flowEntry_wavelength==wavelength))
 				{
 					res=true;
@@ -110,7 +110,7 @@ public class FVVendor extends OFVendor implements Classifiable, Slicable {
 			if(flowEntry_dpid.equals(dpid))
 			{
 				int flowEntry_port= flowEntry.getRuleMatch().getInputPort();
-				float flowEntry_wavelength= flowEntry.getRuleMatch().getWavelength();				
+				float flowEntry_wavelength= flowEntry.getRuleMatch().getDataLayerVirtualLan();				
 				//if ((flowEntry_port==port)&&(flowEntry_wavelength==wavelength))
 				if (flowEntry_port==port)
 				{
